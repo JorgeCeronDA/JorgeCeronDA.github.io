@@ -100,3 +100,63 @@ nav a {
     border: 1px solid #333;
     color: #333;
 }
+/* -------------------------
+   ABOUT
+------------------------- */
+
+.about {
+    padding: 120px 10%;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.section-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.about h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 30px;
+}
+
+.about h2 span {
+    font-weight: normal;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 17px;
+}
+
+.about-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.highlight-card {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.highlight-card span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.highlight-card h3 {
+    margin: 10px 0;
+}
+
+.highlight-card p {
+    color: #666;
+}
