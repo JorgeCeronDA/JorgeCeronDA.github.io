@@ -241,3 +241,136 @@ nav a {
     background-color: #f1f1f1;
     font-size: 13px;
 }
+/* -------------------------
+   PROJECTS
+------------------------- */
+
+.projects {
+    padding: 120px 10%;
+}
+
+.projects-header {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.projects h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.projects h2 span {
+    font-weight: normal;
+}
+
+.projects-header > p:last-child {
+    font-size: 17px;
+    color: #666;
+}
+
+
+/* -------------------------
+   PROJECT GRID
+------------------------- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* -------------------------
+   PROJECT CARD
+------------------------- */
+
+.project-card {
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* -------------------------
+   PROJECT HEADER
+------------------------- */
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-number {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-tool {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+/* -------------------------
+   PROJECT CONTENT
+------------------------- */
+
+.project-card h3 {
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 25px 0 15px;
+}
+
+.project-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* -------------------------
+   PROJECT TAGS
+------------------------- */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.project-tags span {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    font-size: 12px;
+}
+
+
+/* -------------------------
+   PROJECT LINK
+------------------------- */
+
+.project-link {
+    margin-top: 30px;
+
+    text-decoration: none;
+    color: #333;
+
+    font-weight: bold;
+}
