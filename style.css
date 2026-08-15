@@ -500,3 +500,78 @@ footer {
     }
 
 }
+/* -------------------------
+   CARDS - FINAL STYLE
+------------------------- */
+
+.skill-card,
+.project-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    border-color: var(--teal);
+}
+
+
+/* Texto de las tarjetas */
+
+.skill-card h3,
+.project-card h3 {
+    color: var(--text);
+}
+
+.skill-card p,
+.project-card p {
+    color: var(--text-muted);
+}
+
+
+/* Tags */
+
+.skill-tags span,
+.project-tags span {
+    background-color: rgba(54, 194, 180, 0.1);
+    color: var(--teal);
+}
+
+
+/* Links */
+
+.project-link {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--accent);
+}
+.skill-number,
+.project-number {
+    color: var(--teal);
+}
+.project-tool {
+    color: var(--text-muted);
+}
+.section-label {
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.about p,
+.skills-header > p:last-child,
+.projects-header > p:last-child,
+.contact-description {
+    color: var(--text-muted);
+}
+footer {
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+}
