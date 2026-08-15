@@ -4,11 +4,22 @@ html {
 /* -------------------------
    CONFIGURACIÓN GENERAL
 ------------------------- */
-
+:root {
+    --background: #0b1117;
+    --surface: #111a22;
+    --text: #f2f5f7;
+    --text-muted: #9aa7b2;
+    --teal: #36c2b4;
+    --accent: #f2a65a;
+    --border: #24323d;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.6;
+
+    background-color: var(--background);
+    color: var(--text);
 }
 
 
@@ -35,8 +46,14 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-muted);
     font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--teal);
 }
 
 
@@ -53,11 +70,13 @@ nav a {
     font-size: 14px;
     letter-spacing: 3px;
     font-weight: bold;
+    color: var(--teal);
 }
 
 .hero h1 {
     font-size: 72px;
     margin: 10px 0;
+    color: var(--text);
 }
 
 .hero h2 {
@@ -68,6 +87,7 @@ nav a {
 
 .hero h2 span {
     font-weight: bold;
+    color: var(--teal);
 }
 
 .hero-description {
@@ -95,13 +115,28 @@ nav a {
 }
 
 .primary {
-    background-color: #333;
-    color: white;
+    background-color: var(--teal);
+    color: var(--background);
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.primary:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .secondary {
-    border: 1px solid #333;
-    color: #333;
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: border-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.secondary:hover {
+    border-color: var(--teal);
+    color: var(--teal);
 }
 /* -------------------------
    ABOUT
@@ -201,16 +236,22 @@ nav a {
 
 .skill-card {
     padding: 35px;
-    border: 1px solid #ddd;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+
     border-radius: 12px;
-    transition: transform 0.3s ease;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
 .skill-card:hover {
     transform: translateY(-5px);
+    border-color: var(--teal);
 }
-
 
 .skill-number {
     font-size: 13px;
@@ -241,7 +282,10 @@ nav a {
 .skill-tags span {
     padding: 6px 12px;
     border-radius: 20px;
-    background-color: #f1f1f1;
+
+    background-color: rgba(54, 194, 180, 0.1);
+    color: var(--teal);
+
     font-size: 13px;
 }
 /* -------------------------
@@ -290,8 +334,20 @@ nav a {
 
 .project-card {
     padding: 35px;
-    border: 1px solid #ddd;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+
     border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
 
     display: flex;
     flex-direction: column;
@@ -304,7 +360,11 @@ nav a {
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+
+    border-color: var(--teal);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 
