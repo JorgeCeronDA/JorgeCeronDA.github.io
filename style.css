@@ -417,3 +417,18 @@ nav a {
     color: #333;
     font-weight: bold;
 }
+/* -------------------------
+   FOOTER
+------------------------- */
+
+footer {
+    padding: 30px 10%;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+    color: #777;
+}
