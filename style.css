@@ -1,9 +1,11 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
 html {
     scroll-behavior: smooth;
 }
-/* -------------------------
-   CONFIGURACIÓN GENERAL
-------------------------- */
+
 :root {
     --background: #0b1117;
     --surface: #111a22;
@@ -13,33 +15,36 @@ html {
     --accent: #f2a65a;
     --border: #24323d;
 }
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 
     background-color: var(--background);
     color: var(--text);
 }
 
+a {
+    color: inherit;
+}
 
-/* -------------------------
-   HERO
-------------------------- */
 
-.hero {
-    min-height: 100vh;
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+header {
     padding: 0 10%;
 }
 
-@media (max-width: 768px) {
-/* -------------------------
-   NAVEGACIÓN
-------------------------- */
-
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 30px;
     padding: 30px 0;
 }
@@ -57,106 +62,57 @@ nav a:hover {
 }
 
 
-/* -------------------------
-   CONTENIDO DEL HERO
-------------------------- */
+/* =========================
+   HERO
+========================= */
 
-.hero-content {
-    max-width: 800px;
-    margin: 120px auto 0;
+header {
+    min-height: 100vh;
 }
 
-.hero-label {
-    font-size: 14px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    color: var(--teal);
-}
+header h1 {
+    margin-top: 150px;
+    margin-bottom: 10px;
 
-.hero h1 {
     font-size: 72px;
-    margin: 10px 0;
-    color: var(--text);
+    line-height: 1.1;
 }
 
-.hero h2 {
-    font-size: 36px;
-    font-weight: normal;
-    margin: 10px 0 25px;
-}
+header > p {
+    margin: 0;
 
-.hero h2 span {
-    font-weight: bold;
+    font-size: 24px;
     color: var(--teal);
 }
 
-.hero-description {
-    max-width: 650px;
-    font-size: 18px;
-    color: #555;
-}
 
+/* =========================
+   SECCIONES GENERALES
+========================= */
 
-/* -------------------------
-   BOTONES
-------------------------- */
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 35px;
-}
-
-.button {
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.primary {
-    background-color: var(--teal);
-    color: var(--background);
-
-    transition: transform 0.3s ease,
-                background-color 0.3s ease;
-}
-
-.primary:hover {
-    background-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-.secondary {
-    border: 1px solid var(--border);
-    color: var(--text);
-    transition: border-color 0.3s ease,
-                color 0.3s ease;
-}
-
-.secondary:hover {
-    border-color: var(--teal);
-    color: var(--teal);
-}
-/* -------------------------
-   ABOUT
-------------------------- */
-
-.about {
+section {
     padding: 120px 10%;
 }
+
+.section-label {
+    margin: 0;
+
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
 
 .about-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 80px;
     align-items: center;
-}
-
-.section-label {
-    font-size: 13px;
-    letter-spacing: 3px;
-    font-weight: bold;
 }
 
 .about h2 {
@@ -170,7 +126,7 @@ nav a:hover {
 }
 
 .about-text p {
-    color: #555;
+    color: var(--text-muted);
     font-size: 17px;
 }
 
@@ -182,11 +138,23 @@ nav a:hover {
 
 .highlight-card {
     padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--teal);
 }
 
 .highlight-card span {
+    color: var(--teal);
     font-size: 13px;
     font-weight: bold;
 }
@@ -196,15 +164,13 @@ nav a:hover {
 }
 
 .highlight-card p {
-    color: #666;
+    color: var(--text-muted);
 }
-/* -------------------------
-   SKILLS
-------------------------- */
 
-.skills {
-    padding: 120px 10%;
-}
+
+/* =========================
+   SKILLS
+========================= */
 
 .skills-header {
     max-width: 700px;
@@ -222,10 +188,9 @@ nav a:hover {
 }
 
 .skills-header > p:last-child {
+    color: var(--text-muted);
     font-size: 17px;
-    color: #666;
 }
-
 
 .skills-grid {
     display: grid;
@@ -233,20 +198,17 @@ nav a:hover {
     gap: 25px;
 }
 
-
 .skill-card {
     padding: 35px;
 
     background-color: var(--surface);
     border: 1px solid var(--border);
-
-    border-radius: 12px;
+    border-radius: 16px;
 
     transition:
         transform 0.3s ease,
         border-color 0.3s ease;
 }
-
 
 .skill-card:hover {
     transform: translateY(-5px);
@@ -254,22 +216,20 @@ nav a:hover {
 }
 
 .skill-number {
+    color: var(--teal);
     font-size: 13px;
     font-weight: bold;
 }
-
 
 .skill-card h3 {
     font-size: 28px;
     margin: 15px 0;
 }
 
-
 .skill-card p {
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.7;
 }
-
 
 .skill-tags {
     display: flex;
@@ -278,9 +238,10 @@ nav a:hover {
     margin-top: 25px;
 }
 
-
-.skill-tags span {
+.skill-tags span,
+.project-tags span {
     padding: 6px 12px;
+
     border-radius: 20px;
 
     background-color: rgba(54, 194, 180, 0.1);
@@ -288,13 +249,11 @@ nav a:hover {
 
     font-size: 13px;
 }
-/* -------------------------
-   PROJECTS
-------------------------- */
 
-.projects {
-    padding: 120px 10%;
-}
+
+/* =========================
+   PROJECTS
+========================= */
 
 .projects-header {
     max-width: 700px;
@@ -312,14 +271,9 @@ nav a:hover {
 }
 
 .projects-header > p:last-child {
+    color: var(--text-muted);
     font-size: 17px;
-    color: #666;
 }
-
-
-/* -------------------------
-   PROJECT GRID
-------------------------- */
 
 .projects-grid {
     display: grid;
@@ -327,18 +281,12 @@ nav a:hover {
     gap: 25px;
 }
 
-
-/* -------------------------
-   PROJECT CARD
-------------------------- */
-
 .project-card {
     padding: 35px;
 
     background-color: var(--surface);
     border: 1px solid var(--border);
-
-    border-radius: 12px;
+    border-radius: 16px;
 
     display: flex;
     flex-direction: column;
@@ -349,15 +297,6 @@ nav a:hover {
         border-color 0.3s ease;
 }
 
-    display: flex;
-    flex-direction: column;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
 .project-card:hover {
     transform: translateY(-6px);
 
@@ -367,11 +306,6 @@ nav a:hover {
         0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-
-/* -------------------------
-   PROJECT HEADER
-------------------------- */
-
 .project-top {
     display: flex;
     justify-content: space-between;
@@ -379,20 +313,17 @@ nav a:hover {
 }
 
 .project-number {
+    color: var(--teal);
     font-size: 13px;
     font-weight: bold;
 }
 
 .project-tool {
+    color: var(--text-muted);
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: bold;
 }
-
-
-/* -------------------------
-   PROJECT CONTENT
-------------------------- */
 
 .project-card h3 {
     font-size: 26px;
@@ -401,14 +332,9 @@ nav a:hover {
 }
 
 .project-card p {
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.7;
 }
-
-
-/* -------------------------
-   PROJECT TAGS
-------------------------- */
 
 .project-tags {
     display: flex;
@@ -417,33 +343,24 @@ nav a:hover {
     margin-top: 20px;
 }
 
-.project-tags span {
-    padding: 6px 12px;
-    border-radius: 20px;
-    background-color: #f1f1f1;
-    font-size: 12px;
-}
-
-
-/* -------------------------
-   PROJECT LINK
-------------------------- */
-
 .project-link {
     margin-top: 30px;
 
+    color: var(--teal);
     text-decoration: none;
-    color: #333;
-
     font-weight: bold;
-}
-/* -------------------------
-   CONTACT
-------------------------- */
 
-.contact {
-    padding: 140px 10%;
+    transition: color 0.3s ease;
 }
+
+.project-link:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
 
 .contact-content {
     max-width: 800px;
@@ -461,8 +378,9 @@ nav a:hover {
 
 .contact-description {
     max-width: 650px;
+
+    color: var(--text-muted);
     font-size: 17px;
-    color: #666;
 }
 
 .contact-links {
@@ -473,76 +391,6 @@ nav a:hover {
 }
 
 .contact-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-/* -------------------------
-   FOOTER
-------------------------- */
-
-footer {
-    padding: 30px 10%;
-    border-top: 1px solid #ddd;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: 13px;
-    color: #777;
-}
-
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
-}
-@media (max-width: 768px) {
-/* -------------------------
-   CARDS - FINAL STYLE
-------------------------- */
-
-.skill-card,
-.project-card {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-}
-
-.skill-card:hover,
-.project-card:hover {
-    border-color: var(--teal);
-}
-
-
-/* Texto de las tarjetas */
-
-.skill-card h3,
-.project-card h3 {
-    color: var(--text);
-}
-
-.skill-card p,
-.project-card p {
-    color: var(--text-muted);
-}
-
-
-/* Tags */
-
-.skill-tags span,
-.project-tags span {
-    background-color: rgba(54, 194, 180, 0.1);
-    color: var(--teal);
-}
-
-
-/* Links */
-
-.project-link {
     color: var(--teal);
     text-decoration: none;
     font-weight: bold;
@@ -550,29 +398,85 @@ footer {
     transition: color 0.3s ease;
 }
 
-.project-link:hover {
+.contact-link:hover {
     color: var(--accent);
 }
-.skill-number,
-.project-number {
-    color: var(--teal);
-}
-.project-tool {
-    color: var(--text-muted);
-}
-.section-label {
-    color: var(--teal);
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-.about p,
-.skills-header > p:last-child,
-.projects-header > p:last-child,
-.contact-description {
-    color: var(--text-muted);
-}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-    color: var(--text-muted);
+    padding: 30px 10%;
+
     border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 7%;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    header h1 {
+        margin-top: 100px;
+        font-size: 48px;
+    }
+
+    header > p {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 80px 7%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about h2,
+    .skills h2,
+    .projects h2 {
+        font-size: 38px;
+    }
+
+    .contact h2 {
+        font-size: 40px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 }
