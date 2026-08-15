@@ -377,3 +377,43 @@ nav a {
 
     font-weight: bold;
 }
+/* -------------------------
+   CONTACT
+------------------------- */
+
+.contact {
+    padding: 140px 10%;
+}
+
+.contact-content {
+    max-width: 800px;
+}
+
+.contact h2 {
+    font-size: 52px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.contact h2 span {
+    font-weight: normal;
+}
+
+.contact-description {
+    max-width: 650px;
+    font-size: 17px;
+    color: #666;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
