@@ -160,3 +160,84 @@ nav a {
 .highlight-card p {
     color: #666;
 }
+/* -------------------------
+   SKILLS
+------------------------- */
+
+.skills {
+    padding: 120px 10%;
+}
+
+.skills-header {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.skills h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.skills h2 span {
+    font-weight: normal;
+}
+
+.skills-header > p:last-child {
+    font-size: 17px;
+    color: #666;
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+.skill-card {
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.skill-number {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.skill-card h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+
+.skill-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+
+.skill-tags span {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    font-size: 13px;
+}
