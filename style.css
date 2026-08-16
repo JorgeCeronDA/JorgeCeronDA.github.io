@@ -857,6 +857,15 @@ footer {
     .background-grid {
         grid-template-columns: 1fr;
     }
+   .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    }
+
+   .skills-intro {
+    position: static;
+    max-width: 700px;
+    }
 
     .hero-content h1 {
         font-size: 68px;
@@ -929,6 +938,17 @@ footer {
     .publication-grid {
         grid-template-columns: 1fr;
     }
+   .skills-layout {
+    grid-template-columns: 1fr;
+}
+
+.skills-intro h2 {
+    font-size: 38px;
+}
+
+.skill-card {
+    min-height: auto;
+}
 
     .project-card {
         min-height: auto;
