@@ -578,14 +578,25 @@ footer {
         font-size: 14px;
     }
 
-    header h1 {
-        margin-top: 100px;
-        font-size: 48px;
-    }
+.hero-content {
+    margin-top: 90px;
+}
 
-    header > p {
-        font-size: 20px;
-    }
+.hero-content h1 {
+    font-size: 52px;
+}
+
+.hero-content h2 {
+    font-size: 30px;
+}
+
+.hero-description {
+    font-size: 16px;
+}
+
+.hero-buttons {
+    flex-wrap: wrap;
+}
 
     section {
         padding: 80px 7%;
