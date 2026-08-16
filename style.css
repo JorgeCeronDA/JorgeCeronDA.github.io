@@ -1,5 +1,5 @@
 /* =========================
-   CONFIGURACIÓN GENERAL
+   GLOBAL CONFIGURATION
 ========================= */
 
 html {
@@ -9,6 +9,7 @@ html {
 :root {
     --background: #0b1117;
     --surface: #111a22;
+    --surface-light: #16222c;
     --text: #f2f5f7;
     --text-muted: #9aa7b2;
     --teal: #36c2b4;
@@ -33,9 +34,14 @@ a {
     color: inherit;
 }
 
+::selection {
+    background-color: var(--teal);
+    color: var(--background);
+}
+
 
 /* =========================
-   NAVEGACIÓN
+   NAVIGATION
 ========================= */
 
 header {
@@ -60,13 +66,16 @@ nav a {
 nav a:hover {
     color: var(--teal);
 }
+
+
 /* =========================
    HERO
 ========================= */
 
 .hero-content {
-    max-width: 850px;
+    max-width: 900px;
     margin-top: 150px;
+    padding-bottom: 150px;
 }
 
 .hero-label {
@@ -83,9 +92,12 @@ nav a:hover {
 
     font-size: 80px;
     line-height: 1.05;
+    letter-spacing: -2px;
 }
 
 .hero-content h2 {
+    max-width: 850px;
+
     margin: 20px 0 25px;
 
     font-size: 42px;
@@ -98,12 +110,13 @@ nav a:hover {
     font-weight: bold;
 }
 
-.hero-description {
-    max-width: 700px;
+.hero-tools {
+    margin-top: 25px;
 
-    color: var(--text-muted);
-    font-size: 18px;
-    line-height: 1.7;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .hero-buttons {
@@ -113,21 +126,25 @@ nav a:hover {
 }
 
 .button {
+    display: inline-block;
+
     padding: 12px 25px;
 
     border-radius: 6px;
 
     text-decoration: none;
     font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .primary {
     background-color: var(--teal);
     color: var(--background);
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease;
 }
 
 .primary:hover {
@@ -138,19 +155,35 @@ nav a:hover {
 .secondary {
     border: 1px solid var(--border);
     color: var(--text);
-
-    transition:
-        border-color 0.3s ease,
-        color 0.3s ease;
 }
 
 .secondary:hover {
     border-color: var(--teal);
     color: var(--teal);
+    transform: translateY(-2px);
 }
 
+.hero-socials {
+    display: flex;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.hero-socials a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.hero-socials a:hover {
+    color: var(--teal);
+}
+
+
 /* =========================
-   SECCIONES GENERALES
+   GENERAL SECTIONS
 ========================= */
 
 section {
@@ -191,7 +224,6 @@ section {
     color: var(--teal);
     font-weight: normal;
 }
-
 
 .about-text p {
     max-width: 700px;
@@ -290,12 +322,16 @@ section {
 
     transition:
         transform 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: var(--teal);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .skill-number {
@@ -322,7 +358,8 @@ section {
 }
 
 .skill-tags span,
-.project-tags span {
+.project-tags span,
+.capability-tags span {
     padding: 6px 12px;
 
     border-radius: 20px;
@@ -331,6 +368,49 @@ section {
     color: var(--teal);
 
     font-size: 13px;
+}
+
+
+/* =========================
+   ANALYTICS CAPABILITIES
+========================= */
+
+.analytics-capabilities {
+    margin-top: 60px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid var(--border);
+}
+
+.capabilities-label {
+    margin: 0 0 20px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.capability-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.capability-tags span {
+    background-color: transparent;
+    border: 1px solid var(--border);
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.capability-tags span:hover {
+    border-color: var(--teal);
+    color: var(--teal);
 }
 
 
@@ -365,6 +445,8 @@ section {
 }
 
 .project-card {
+    min-height: 390px;
+
     padding: 35px;
 
     background-color: var(--surface);
@@ -427,13 +509,16 @@ section {
 }
 
 .project-link {
-    margin-top: 30px;
+    margin-top: auto;
+    padding-top: 30px;
 
     color: var(--teal);
     text-decoration: none;
     font-weight: bold;
 
-    transition: color 0.3s ease;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .project-link:hover {
@@ -442,7 +527,194 @@ section {
 
 
 /* =========================
-   CONTACTO
+   BACKGROUND
+========================= */
+
+.background-header {
+    max-width: 750px;
+    margin-bottom: 60px;
+}
+
+.background h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 0;
+}
+
+.background h2 span {
+    color: var(--teal);
+    font-weight: normal;
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.background-card {
+    padding: 35px;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.background-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--teal);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.background-number {
+    color: var(--teal);
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.background-label {
+    margin-top: 30px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.background-card h3 {
+    font-size: 24px;
+    line-height: 1.35;
+    margin: 15px 0;
+}
+
+.background-card > p:last-child {
+    color: var(--text-muted);
+}
+
+
+/* =========================
+   PUBLICATIONS
+========================= */
+
+.publications-header {
+    max-width: 750px;
+    margin-bottom: 60px;
+}
+
+.publications h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.publications h2 span {
+    color: var(--teal);
+    font-weight: normal;
+}
+
+.publications-header > p:last-child {
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+.publication-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.publication-card {
+    padding: 35px;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--teal);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.publication-number {
+    color: var(--teal);
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.publication-role {
+    margin-top: 30px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.publication-card h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.publication-card > p:not(.publication-role) {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CV SECTION
+========================= */
+
+.cv-section {
+    text-align: center;
+}
+
+.cv-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.cv-content h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.cv-content h2 span {
+    color: var(--teal);
+    font-weight: normal;
+}
+
+.cv-content > p:not(.section-label) {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CONTACT
 ========================= */
 
 .contact-content {
@@ -456,6 +728,7 @@ section {
 }
 
 .contact h2 span {
+    color: var(--teal);
     font-weight: normal;
 }
 
@@ -508,6 +781,31 @@ footer {
    RESPONSIVE
 ========================= */
 
+@media (max-width: 1000px) {
+
+    header {
+        padding: 0 7%;
+    }
+
+    section {
+        padding: 100px 7%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .background-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 68px;
+    }
+}
+
+
 @media (max-width: 768px) {
 
     header {
@@ -521,41 +819,46 @@ footer {
     }
 
     nav a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
-.hero-content {
-    margin-top: 90px;
-}
+    .hero-content {
+        margin-top: 90px;
+        padding-bottom: 100px;
+    }
 
-.hero-content h1 {
-    font-size: 52px;
-}
+    .hero-content h1 {
+        font-size: 52px;
+        letter-spacing: -1px;
+    }
 
-.hero-content h2 {
-    font-size: 30px;
-}
+    .hero-content h2 {
+        font-size: 30px;
+    }
 
-.hero-description {
-    font-size: 16px;
-}
+    .hero-tools {
+        font-size: 14px;
+        line-height: 1.8;
+    }
 
-.hero-buttons {
-    flex-wrap: wrap;
-}
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
 
     section {
         padding: 80px 7%;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
     .about h2,
     .skills h2,
-    .projects h2 {
+    .projects h2,
+    .background h2,
+    .publications h2,
+    .cv-content h2 {
         font-size: 38px;
     }
 
@@ -564,8 +867,18 @@ footer {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .publication-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
     }
 
     footer {
@@ -573,23 +886,46 @@ footer {
         align-items: flex-start;
         gap: 5px;
     }
-   .hero-content {
-    margin-top: 90px;
 }
 
-.hero-content h1 {
-    font-size: 52px;
-}
 
-.hero-content h2 {
-    font-size: 30px;
-}
+@media (max-width: 480px) {
 
-.hero-description {
-    font-size: 16px;
-}
+    nav {
+        gap: 12px;
+    }
 
-.hero-buttons {
-    flex-wrap: wrap;
-}
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        margin-top: 70px;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content h2 {
+        font-size: 26px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skill-card,
+    .project-card,
+    .highlight-card,
+    .background-card,
+    .publication-card {
+        padding: 28px;
+    }
 }
