@@ -1096,17 +1096,37 @@ section {
 ========================= */
 
 .cv-section {
+    padding: 120px 10%;
     text-align: center;
 }
 
 .cv-content {
-    max-width: 750px;
+    max-width: 850px;
     margin: 0 auto;
+
+    padding: 70px 60px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cv-content:hover {
+    border-color: var(--teal);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .cv-content h2 {
     font-size: 48px;
     line-height: 1.2;
+
     margin: 15px 0 25px;
 }
 
@@ -1116,9 +1136,14 @@ section {
 }
 
 .cv-content > p:not(.section-label) {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
     color: var(--text-muted);
+
     font-size: 17px;
-    margin-bottom: 35px;
+    line-height: 1.7;
 }
 
 
