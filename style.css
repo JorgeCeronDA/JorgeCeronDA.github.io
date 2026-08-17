@@ -476,38 +476,67 @@ section {
    PROJECTS
 ========================= */
 
-.projects-header {
-    max-width: 700px;
-    margin-bottom: 60px;
+.projects-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.5fr;
+    gap: 70px;
+    align-items: start;
 }
 
-.projects h2 {
+
+/* =========================
+   PROJECTS INTRO
+========================= */
+
+.projects-intro {
+    max-width: 420px;
+
+    position: sticky;
+    top: 100px;
+}
+
+.projects-intro h2 {
     font-size: 48px;
     line-height: 1.2;
+
     margin: 15px 0 25px;
 }
 
-.projects h2 span {
+.projects-intro h2 span {
+    color: var(--teal);
     font-weight: normal;
 }
 
-.projects-header > p:last-child {
+.projects-intro > p:last-child {
     color: var(--text-muted);
+
     font-size: 17px;
+    line-height: 1.7;
 }
+
+
+/* =========================
+   PROJECT GRID
+========================= */
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 18px;
 }
 
-.project-card {
-    min-height: 390px;
 
-    padding: 35px;
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+    min-height: 450px;
+
+    padding: 22px;
 
     background-color: var(--surface);
+
     border: 1px solid var(--border);
     border-radius: 16px;
 
@@ -516,12 +545,12 @@ section {
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 
     border-color: var(--teal);
 
@@ -529,49 +558,195 @@ section {
         0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
+
+/* =========================
+   PROJECT TOP
+========================= */
+
 .project-top {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 15px;
 }
 
 .project-number {
     color: var(--teal);
+
     font-size: 13px;
     font-weight: bold;
+
+    letter-spacing: 1px;
 }
 
 .project-tool {
-    color: var(--text-muted);
-    font-size: 12px;
-    letter-spacing: 1px;
+    color: var(--teal);
+
+    font-size: 11px;
     font-weight: bold;
+
+    letter-spacing: 1px;
 }
 
+
+/* =========================
+   PROJECT IMAGE PLACEHOLDER
+========================= */
+
+.project-image {
+    height: 150px;
+
+    margin-bottom: 22px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background-color: var(--background);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.project-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 75%;
+    height: 2px;
+
+    background-color: var(--teal);
+
+    opacity: 0.5;
+
+    transform: rotate(-8deg);
+}
+
+.project-image span {
+    position: relative;
+    z-index: 1;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   PROJECT IMAGE VARIATIONS
+========================= */
+
+.project-image-powerbi::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    height: 45%;
+
+    border: 1px solid var(--teal);
+
+    border-radius: 4px;
+
+    opacity: 0.35;
+}
+
+.project-image-sql::before {
+    width: 65%;
+
+    transform: none;
+
+    box-shadow:
+        0 15px 0 rgba(54, 194, 180, 0.25),
+        0 30px 0 rgba(54, 194, 180, 0.15);
+}
+
+.project-image-python::before {
+    width: 55%;
+
+    transform: rotate(-15deg);
+
+    box-shadow:
+        20px -18px 0 rgba(54, 194, 180, 0.25),
+        40px 8px 0 rgba(54, 194, 180, 0.15);
+}
+
+
+/* =========================
+   PROJECT TEXT
+========================= */
+
 .project-card h3 {
-    font-size: 26px;
+    margin: 0 0 12px;
+
+    font-size: 23px;
     line-height: 1.3;
-    margin: 25px 0 15px;
 }
 
 .project-card p {
+    margin: 0;
+
     color: var(--text-muted);
-    line-height: 1.7;
+
+    font-size: 15px;
+    line-height: 1.65;
 }
+
+
+/* =========================
+   PROJECT TAGS
+========================= */
 
 .project-tags {
     display: flex;
+
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
+
+    gap: 7px;
+
+    margin-top: auto;
+
+    padding-top: 22px;
 }
 
-.project-link {
-    margin-top: auto;
-    padding-top: 30px;
+.project-tags span {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background-color: rgba(54, 194, 180, 0.10);
 
     color: var(--teal);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   PROJECT LINK
+========================= */
+
+.project-link {
+    margin-top: 20px;
+
+    color: var(--teal);
+
     text-decoration: none;
+
+    font-size: 14px;
     font-weight: bold;
 
     transition:
@@ -581,6 +756,8 @@ section {
 
 .project-link:hover {
     color: var(--accent);
+
+    transform: translateX(3px);
 }
 
 
