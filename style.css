@@ -840,38 +840,114 @@ section {
    PUBLICATIONS
 ========================= */
 
-.publications-header {
-    max-width: 750px;
-    margin-bottom: 60px;
+.publications-layout {
+    display: grid;
+
+    grid-template-columns: 0.75fr 1.5fr;
+
+    gap: 70px;
+
+    align-items: start;
 }
 
-.publications h2 {
+
+/* =========================
+   PUBLICATIONS INTRO
+========================= */
+
+.publications-intro {
+    max-width: 420px;
+
+    position: sticky;
+    top: 100px;
+}
+
+.publications-intro h2 {
     font-size: 48px;
+
     line-height: 1.2;
+
     margin: 15px 0 25px;
 }
 
-.publications h2 span {
+.publications-intro h2 span {
     color: var(--teal);
+
     font-weight: normal;
 }
 
-.publications-header > p:last-child {
+.publications-intro > p:not(.section-label) {
     color: var(--text-muted);
+
     font-size: 17px;
+
+    line-height: 1.7;
 }
+
+
+/* =========================
+   PUBLICATION SUMMARY
+========================= */
+
+.publication-summary {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.publication-summary strong {
+    color: var(--teal);
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+.publication-summary span {
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   PUBLICATION GRID
+========================= */
 
 .publication-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
 }
 
+
+/* =========================
+   PUBLICATION CARD
+========================= */
+
 .publication-card {
-    padding: 35px;
+    padding: 30px;
 
     background-color: var(--surface);
+
     border: 1px solid var(--border);
+
     border-radius: 16px;
 
     transition:
@@ -889,33 +965,131 @@ section {
         0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
+
+/* =========================
+   PUBLICATION TOP
+========================= */
+
+.publication-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
 .publication-number {
     color: var(--teal);
 
     font-size: 13px;
+
     font-weight: bold;
+
+    letter-spacing: 1px;
 }
 
 .publication-role {
-    margin-top: 30px;
+    margin: 0;
+
+    color: var(--teal);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   JOURNAL
+========================= */
+
+.publication-journal {
+    margin: 0 0 15px;
 
     color: var(--text-muted);
 
     font-size: 11px;
+
     font-weight: bold;
-    letter-spacing: 2px;
+
+    letter-spacing: 1.5px;
 }
+
+
+/* =========================
+   TITLE
+========================= */
 
 .publication-card h3 {
-    font-size: 25px;
-    margin: 15px 0;
+    margin: 0 0 18px;
+
+    font-size: 22px;
+
+    line-height: 1.4;
 }
 
-.publication-card > p:not(.publication-role) {
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.publication-description {
+    margin: 0;
+
     color: var(--text-muted);
+
+    font-size: 15px;
+
     line-height: 1.7;
 }
 
+
+/* =========================
+   DOI
+========================= */
+
+.publication-doi {
+    margin: 20px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    font-family: monospace;
+}
+
+
+/* =========================
+   PUBLICATION LINK
+========================= */
+
+.publication-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: var(--teal);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.publication-link:hover {
+    color: var(--accent);
+
+    transform: translateX(3px);
+}
 
 /* =========================
    CV SECTION
