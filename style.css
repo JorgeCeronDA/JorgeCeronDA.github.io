@@ -712,7 +712,22 @@ section {
 .project-image-telecom::after {
     display: none;
 }
+.project-image-powerbi img,
+.project-image-python img {
+    width: 100%;
+    height: 100%;
 
+    object-fit: contain;
+
+    padding: 10px;
+}
+
+.project-image-powerbi::before,
+.project-image-powerbi::after,
+.project-image-python::before,
+.project-image-python::after {
+    display: none;
+}
 /* =========================
    PROJECT TEXT
 ========================= */
