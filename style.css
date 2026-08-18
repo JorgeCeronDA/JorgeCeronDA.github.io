@@ -698,31 +698,19 @@ section {
 
     transform: translateX(55px);
 }
-.project-image-telecom::before {
-    width: 65%;
 
-    transform: none;
+.project-image-telecom img {
+    width: 100%;
+    height: 100%;
 
-    box-shadow:
-        0 12px 0 rgba(54, 194, 180, 0.20),
-        0 24px 0 rgba(54, 194, 180, 0.12);
+    object-fit: cover;
+
+    display: block;
 }
 
+.project-image-telecom::before,
 .project-image-telecom::after {
-    content: "";
-
-    position: absolute;
-
-    width: 35%;
-    height: 50%;
-
-    border: 1px solid var(--teal);
-
-    border-radius: 4px;
-
-    opacity: 0.35;
-
-    transform: translateX(45px);
+    display: none;
 }
 
 /* =========================
