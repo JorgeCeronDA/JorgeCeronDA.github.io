@@ -675,11 +675,28 @@ section {
 .project-image-python::before {
     width: 55%;
 
-    transform: rotate(-15deg);
+    transform: rotate(-8deg);
 
     box-shadow:
-        20px -18px 0 rgba(54, 194, 180, 0.25),
-        40px 8px 0 rgba(54, 194, 180, 0.15);
+        25px -20px 0 rgba(54, 194, 180, 0.25),
+        50px 5px 0 rgba(54, 194, 180, 0.15);
+}
+
+.project-image-python::after {
+    content: "";
+
+    position: absolute;
+
+    width: 28%;
+    height: 45%;
+
+    border: 1px solid var(--teal);
+
+    border-radius: 4px;
+
+    opacity: 0.35;
+
+    transform: translateX(55px);
 }
 
 
