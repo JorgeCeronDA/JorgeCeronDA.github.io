@@ -703,9 +703,9 @@ section {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    display: block;
+    padding: 10px;
 }
 
 .project-image-telecom::before,
