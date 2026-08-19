@@ -281,7 +281,12 @@ section {
 .highlight-card p {
     color: var(--text-muted);
 }
+.about-text p:not(.section-label) {
+    text-align: justify;
+    text-justify: inter-word;
 
+    hyphens: auto;
+}
 /* =========================
    SKILLS
 ========================= */
