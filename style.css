@@ -231,10 +231,7 @@ section {
     color: var(--text-muted);
     font-size: 17px;
     line-height: 1.8;
-      text-align: justify;
-    text-justify: inter-word;
-
-    hyphens: auto;
+    
 }
 
 .about-highlight {
