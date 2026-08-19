@@ -233,12 +233,6 @@ section {
     line-height: 1.8;
     
 }
-.about-text p:not(.section-label) {
-    text-align: justify;
-    text-justify: inter-word;
-
-    hyphens: auto;
-}
 
 .about-highlight {
     display: flex;
